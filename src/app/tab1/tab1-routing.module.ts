@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'activity-detail/:id',
+    loadChildren: () => import('../activity-detail/activity-detail.module').then( m => m.ActivityDetailPageModule)
   }
 ];
 

@@ -1,0 +1,12 @@
+Capacitor Setup
+
+ionic build
+
+ionic cap add ios
+ionic cap add android
+
+ionic cap copy
+
+ionic cap sync
+
+sudo ionic cap open android

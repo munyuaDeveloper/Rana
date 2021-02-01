@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >
+    <ion-fab vertical="top" horizontal="end">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="bottom">
+        <ion-fab-button>
+          <ion-icon name="play-outline" color="danger"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="heart-outline" color="success"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="share-social-outline" color="primary"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+  
+    </ion-fab>
+    <ion-img [src]="(activityDetails | async)?.image"></ion-img>
+    <ion-card-header>
+      <ion-card-title>
+       {{(activityDetails | async)?.name}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{(activityDetails | async)?.description}}
+    </ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-chip color="primary"> {{(activityDetails | async)?.created_by}}</ion-chip>
+      </ion-item>
+      <ion-item>
+        <ion-label>Duration</ion-label>
+        <ion-chip color="danger"> {{(activityDetails | async)?.duration}}</ion-chip>
+      </ion-item>
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-chip color="success"> {{(activityDetails | async)?.category}}</ion-chip>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
